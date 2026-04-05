@@ -1,66 +1,54 @@
-## Foundry
+# 🎰 Foundry Smart Contract Lottery
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+A provably fair, decentralized raffle system built with Solidity and Foundry — powered by **Chainlink VRF v2.5** for verifiable randomness and **Chainlink Automation** for trustless execution.
 
-Foundry consists of:
+## 🛠 Tech Stack
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Solidity** `^0.8.19`
+- **Foundry** — build, test, deploy
+- **Chainlink VRF v2.5** — verifiable random winner selection
+- **Chainlink Automation** — automatic raffle execution
+- **Sepolia Testnet** — live deployment
 
-## Documentation
+## 📦 Installation
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+git clone https://github.com/youssef112w/foundry-smart-contract-lottery.git
+cd foundry-smart-contract-lottery
+forge install
 ```
 
-### Test
+## ⚙️ Setup
 
-```shell
-$ forge test
+Create a `.env` file:
+
+```env
+SEPOLIA_RPC_URL=your_rpc_url
+PRIVATE_KEY=your_private_key
+ETHERSCAN_API_KEY=your_etherscan_key
 ```
 
-### Format
+## 🚀 Deploy
 
-```shell
-$ forge fmt
+```bash
+# Local
+make deploy
+
+# Sepolia
+make deploy ARGS="--network sepolia"
 ```
 
-### Gas Snapshots
+## 🧪 Tests
 
-```shell
-$ forge snapshot
+```bash
+forge test
+forge coverage
 ```
 
-### Anvil
+## 📄 Contract
 
-```shell
-$ anvil
-```
+| Network | Address |
+|---------|---------|
+| Sepolia | [`0x23C319d67712D3cCF226E56E302bcBA64151E6a1`](https://sepolia.etherscan.io/address/0x23C319d67712D3cCF226E56E302bcBA64151E6a1) |
 
-### Deploy
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
